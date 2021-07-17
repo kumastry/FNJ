@@ -7,8 +7,12 @@ with open("dist.csv") as f:
     data = pd.read_csv("dist.csv", header=None).values
 
 n = len(data)
+#2.~7.
 while(n >= 3):
-    
+    print("######")
+    print(n)
+    print("######")
+    #3.
     Sij = 10**18
     it = -1
     jt = -1
@@ -25,10 +29,18 @@ while(n >= 3):
                 it = i
                 jt = j
                 
-
+    #4.
     Lix = (data[it][jt] + sum(data[it]) / (n-2) - sum(data[jt]) / (n-2))/2
     Ljx = data[it][jt] - Lix
 
+    dxk = np.empty(0)
+    for k in range(len(data)):
+        if(k != it and k != jt):
+            dxk = np.append(dxk , (data[it][k] + data[jt][k] -data[it][jt])/2)
+
+    print("###")
+    print(dxk.shape)
+    print("###")
     arr = np.arange(n)
     if(jt < it):
         tmp = jt
@@ -36,11 +48,13 @@ while(n >= 3):
         it = tmp
     #it < jt    
     r= np.hstack((arr[:it], arr[it+1:jt], arr[jt+1:]))
-    print(r)
+  
     data = data[r,:]
     data = data[:, r]
 
-    rowx = np.zeros((n-1))
-    print(rowx.shape)
+    data = np.insert(data,len(data),dxk,axis=1)
+    print(data.shape)
+    data = np.insert(data, len(data) , np.append(dxk, 0), axis = 0)
+
     print(data.shape)
     n-=1
