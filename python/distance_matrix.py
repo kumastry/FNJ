@@ -5,6 +5,7 @@ from  scipy.spatial import distance
 data = []
 with open("data.csv") as f:    
     data = pd.read_csv("data.csv").values
+
 print(data)
 print(type(data))
 
