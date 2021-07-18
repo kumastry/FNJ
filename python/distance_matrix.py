@@ -9,6 +9,6 @@ with open("data.csv") as f:
 print(data)
 print(type(data))
 
-dist = distance.cdist(data, data, metric = 'euclidean')
+dist = distance.cdist(data, data, metric = 'cosine')
 np.savetxt('dist.csv', dist, delimiter = ',')
 print(dist)
