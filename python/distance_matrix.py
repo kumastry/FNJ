@@ -2,13 +2,11 @@ import pandas as pd
 import numpy as np
 from  scipy.spatial import distance
 
-data = []
-with open("data.csv") as f:    
-    data = pd.read_csv("data.csv").values
+df = pd.read_csv('wine_data.csv', header=None)
+df = df.drop(df.columns[[0]], axis=1)
+df.iloc[:,[12]] = df.iloc[:,[12]] / 10
+data = df.values
 
-print(data)
-print(type(data))
-
-dist = distance.cdist(data, data, metric = 'cosine')
+dist = distance.cdist(data, data, metric = 'euclid')
 np.savetxt('dist.csv', dist, delimiter = ',')
 print(dist)
