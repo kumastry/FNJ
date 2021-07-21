@@ -1,4 +1,3 @@
-from os import O_TEMPORARY
 import pandas as pd
 import numpy as np
 import json
@@ -70,7 +69,7 @@ while(n >= 3):
         it = tmp
     #it < jt    
     r= np.hstack((arr[:it], arr[it+1:jt], arr[jt+1:]))
-  
+    
     data = data[r,:]
     data = data[:, r]
 
