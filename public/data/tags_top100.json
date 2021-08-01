@@ -1,0 +1,402 @@
+{
+  "Python": {
+    "items_count": 54557,
+    "followers_count": 95174
+  },
+  "JavaScript": {
+    "items_count": 42373,
+    "followers_count": 88918
+  },
+  "Ruby": {
+    "items_count": 34044,
+    "followers_count": 48660
+  },
+  "Rails": {
+    "items_count": 31489,
+    "followers_count": 33865
+  },
+  "AWS": {
+    "items_count": 25290,
+    "followers_count": 9700
+  },
+  "PHP": {
+    "items_count": 23615,
+    "followers_count": 54642
+  },
+  "Docker": {
+    "items_count": 18423,
+    "followers_count": 8415
+  },
+  "iOS": {
+    "items_count": 18335,
+    "followers_count": 44344
+  },
+  "Java": {
+    "items_count": 17966,
+    "followers_count": 57857
+  },
+  "Swift": {
+    "items_count": 17433,
+    "followers_count": 7574
+  },
+  "初心者": {
+    "items_count": 17114,
+    "followers_count": 5076
+  },
+  "Android": {
+    "items_count": 16401,
+    "followers_count": 51265
+  },
+  "Linux": {
+    "items_count": 14400,
+    "followers_count": 56693
+  },
+  "Node.js": {
+    "items_count": 13154,
+    "followers_count": 40817
+  },
+  "Python3": {
+    "items_count": 13008,
+    "followers_count": 4149
+  },
+  "Git": {
+    "items_count": 12404,
+    "followers_count": 54784
+  },
+  "C#": {
+    "items_count": 11537,
+    "followers_count": 36567
+  },
+  "Unity": {
+    "items_count": 11496,
+    "followers_count": 5747
+  },
+  "Mac": {
+    "items_count": 11086,
+    "followers_count": 44996
+  },
+  "CSS": {
+    "items_count": 10208,
+    "followers_count": 57451
+  },
+  "Vue.js": {
+    "items_count": 10153,
+    "followers_count": 5726
+  },
+  "Go": {
+    "items_count": 9999,
+    "followers_count": 6084
+  },
+  "MySQL": {
+    "items_count": 9896,
+    "followers_count": 47017
+  },
+  "Laravel": {
+    "items_count": 9629,
+    "followers_count": 3089
+  },
+  "HTML": {
+    "items_count": 9524,
+    "followers_count": 69114
+  },
+  "React": {
+    "items_count": 9491,
+    "followers_count": 5501
+  },
+  "機械学習": {
+    "items_count": 9116,
+    "followers_count": 7050
+  },
+  "C++": {
+    "items_count": 8869,
+    "followers_count": 37596
+  },
+  "Windows": {
+    "items_count": 8317,
+    "followers_count": 1537
+  },
+  "GitHub": {
+    "items_count": 8232,
+    "followers_count": 68475
+  },
+  "Xcode": {
+    "items_count": 7372,
+    "followers_count": 30685
+  },
+  "TypeScript": {
+    "items_count": 7361,
+    "followers_count": 3960
+  },
+  "RaspberryPi": {
+    "items_count": 7295,
+    "followers_count": 4091
+  },
+  "Ubuntu": {
+    "items_count": 7273,
+    "followers_count": 31334
+  },
+  "CentOS": {
+    "items_count": 5804,
+    "followers_count": 28782
+  },
+  "DeepLearning": {
+    "items_count": 5622,
+    "followers_count": 4358
+  },
+  "jQuery": {
+    "items_count": 5523,
+    "followers_count": 42919
+  },
+  "Bash": {
+    "items_count": 5033,
+    "followers_count": 1473
+  },
+  "VSCode": {
+    "items_count": 5002,
+    "followers_count": 3051
+  },
+  "Kotlin": {
+    "items_count": 4867,
+    "followers_count": 2945
+  },
+  "Azure": {
+    "items_count": 4636,
+    "followers_count": 1637
+  },
+  "kubernetes": {
+    "items_count": 4591,
+    "followers_count": 2229
+  },
+  "MacOSX": {
+    "items_count": 4541,
+    "followers_count": 36932
+  },
+  "Firebase": {
+    "items_count": 4518,
+    "followers_count": 2303
+  },
+  "Vim": {
+    "items_count": 4489,
+    "followers_count": 30183
+  },
+  "Vagrant": {
+    "items_count": 4430,
+    "followers_count": 1615
+  },
+  "WordPress": {
+    "items_count": 4391,
+    "followers_count": 2140
+  },
+  "SQL": {
+    "items_count": 4390,
+    "followers_count": 1912
+  },
+  "Django": {
+    "items_count": 4136,
+    "followers_count": 2055
+  },
+  "Heroku": {
+    "items_count": 4055,
+    "followers_count": 17405
+  },
+  "Objective-C": {
+    "items_count": 4030,
+    "followers_count": 22809
+  },
+  "R": {
+    "items_count": 4021,
+    "followers_count": 2342
+  },
+  "PostgreSQL": {
+    "items_count": 3894,
+    "followers_count": 1401
+  },
+  "lambda": {
+    "items_count": 3890,
+    "followers_count": 857
+  },
+  "Windows10": {
+    "items_count": 3846,
+    "followers_count": 470
+  },
+  "#migrated": {
+    "items_count": 3724,
+    "followers_count": 3
+  },
+  "Slack": {
+    "items_count": 3696,
+    "followers_count": 2507
+  },
+  "nginx": {
+    "items_count": 3613,
+    "followers_count": 21407
+  },
+  "TensorFlow": {
+    "items_count": 3586,
+    "followers_count": 3175
+  },
+  "HTML5": {
+    "items_count": 3562,
+    "followers_count": 63360
+  },
+  "C": {
+    "items_count": 3554,
+    "followers_count": 32133
+  },
+  "EC2": {
+    "items_count": 3549,
+    "followers_count": 416
+  },
+  "docker-compose": {
+    "items_count": 3456,
+    "followers_count": 532
+  },
+  "Excel": {
+    "items_count": 3337,
+    "followers_count": 1246
+  },
+  "IoT": {
+    "items_count": 3320,
+    "followers_count": 1440
+  },
+  "gcp": {
+    "items_count": 3257,
+    "followers_count": 1234
+  },
+  "Angular": {
+    "items_count": 3250,
+    "followers_count": 2506
+  },
+  "ShellScript": {
+    "items_count": 3233,
+    "followers_count": 28630
+  },
+  "Scala": {
+    "items_count": 3188,
+    "followers_count": 14920
+  },
+  "GoogleAppsScript": {
+    "items_count": 3172,
+    "followers_count": 2133
+  },
+  "AtCoder": {
+    "items_count": 3169,
+    "followers_count": 878
+  },
+  "centos7": {
+    "items_count": 3168,
+    "followers_count": 331
+  },
+  "Flutter": {
+    "items_count": 3129,
+    "followers_count": 1773
+  },
+  "Arduino": {
+    "items_count": 3106,
+    "followers_count": 1558
+  },
+  "nuxt.js": {
+    "items_count": 3069,
+    "followers_count": 1069
+  },
+  "api": {
+    "items_count": 3047,
+    "followers_count": 679
+  },
+  "SSH": {
+    "items_count": 3024,
+    "followers_count": 26997
+  },
+  "OpenCV": {
+    "items_count": 3022,
+    "followers_count": 1648
+  },
+  "ポエム": {
+    "items_count": 2969,
+    "followers_count": 720
+  },
+  "PowerShell": {
+    "items_count": 2917,
+    "followers_count": 1386
+  },
+  "MachineLearning": {
+    "items_count": 2909,
+    "followers_count": 2160
+  },
+  "Ansible": {
+    "items_count": 2821,
+    "followers_count": 1665
+  },
+  "Apache": {
+    "items_count": 2802,
+    "followers_count": 28809
+  },
+  "AndroidStudio": {
+    "items_count": 2744,
+    "followers_count": 887
+  },
+  "競技プログラミング": {
+    "items_count": 2732,
+    "followers_count": 1128
+  },
+  "新人プログラマ応援": {
+    "items_count": 2716,
+    "followers_count": 3576
+  },
+  "Rust": {
+    "items_count": 2697,
+    "followers_count": 2692
+  },
+  "Chrome": {
+    "items_count": 2677,
+    "followers_count": 56597
+  },
+  "VirtualBox": {
+    "items_count": 2576,
+    "followers_count": 561
+  },
+  "JSON": {
+    "items_count": 2524,
+    "followers_count": 592
+  },
+  "oracle": {
+    "items_count": 2505,
+    "followers_count": 771
+  },
+  "pandas": {
+    "items_count": 2481,
+    "followers_count": 837
+  },
+  "初心者向け": {
+    "items_count": 2464,
+    "followers_count": 302
+  },
+  "S3": {
+    "items_count": 2419,
+    "followers_count": 282
+  },
+  "VBA": {
+    "items_count": 2355,
+    "followers_count": 1293
+  },
+  "Qiita": {
+    "items_count": 2339,
+    "followers_count": 70630
+  },
+  "Elixir": {
+    "items_count": 2294,
+    "followers_count": 1249
+  },
+  "npm": {
+    "items_count": 2274,
+    "followers_count": 518
+  },
+  "spring-boot": {
+    "items_count": 2241,
+    "followers_count": 851
+  },
+  "数学": {
+    "items_count": 2232,
+    "followers_count": 1452
+  }
+}

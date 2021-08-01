@@ -4,8 +4,8 @@ import json
 
 data = []
 label = []
-with open("python\data\dist.csv") as f:    
-    data = pd.read_csv("python\data\dist.csv", header=None).values
+with open("python\data\est_dist.csv") as f:    
+    data = pd.read_csv("python\data\est_dist.csv", header=None).values
     #label = pd.read_csv("wine_data.csv", header = None)
 n = len(data)
 x = n
@@ -136,6 +136,6 @@ while(n >= 3):
 
 print(edge)
 
-f2 = open('python\data\edge.json', 'w')
+f2 = open('python\data\est.json', 'w')
 json.dump(edge, f2)
 f2.close
