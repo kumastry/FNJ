@@ -65,7 +65,7 @@ function Main() {
               .id((d) => d.id)
             
           ) //stength:linkの強さ（元に戻る力 distance: linkの長さ
-          .force("charge", d3.forceManyBody().strength(-300)) //引き合う力を設定。
+          .force("charge", d3.forceManyBody().strength(-2000)) //引き合う力を設定。
           .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2)) //描画するときの中心を設定
           .force("r", forceRadial(function (d) {
             return d.r;
@@ -88,7 +88,7 @@ function Main() {
            "r",
            d3
              .forceRadial()
-             .radius(svgHeight*0.05)
+             .radius(svgHeight*0.5)
              .x(svgWidth / 2)
              .y(svgHeight / 2)
              .strength(0.5)
@@ -124,14 +124,16 @@ function Main() {
         const leavesLength = label.length;
         const nodes = Array();
         const links = Array();
-        const r = 8;
+        
 
         for(let i = 1; i <= 1887; i++) {
             let col;
+            let r = 10;
             if(i <= leavesLength)  {
             col = "rgb(255, 0, 0)";
         } else {
             col = "rgb(100,100, 100)";
+            r = 5;
         }
 
             const title = i <= leavesLength?label[i-1]['word']:"";
