@@ -5,9 +5,9 @@ import { useEffect, useState,useRef } from "react";
 function ZoomableSVG({ children, width, height }) {
   console.log("ZoomableSVG");
   const svgRef = useRef();
-  const [k, setK] = useState(1);
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
+  const [k, setK] = useState(0.1);
+  const [x, setX] = useState(width/4);
+  const [y, setY] = useState(height/8);
   useEffect(() => {
     const zoom = d3.zoom().on("zoom", (event) => {
       const { x, y, k } = event.transform;
@@ -29,7 +29,6 @@ function ZoomableSVG({ children, width, height }) {
 
 
 function Main() {
-    const MOBILE_BORDER_SIZE = 599;
   
     const [loading, setLoading] = useState(true);
     const [nodes, setNodes] = useState([]);
