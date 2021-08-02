@@ -1,5 +1,32 @@
 import * as d3 from "d3";
-import { useEffect, useState } from "react";
+import { forceRadial } from "d3";
+import { useEffect, useState,useRef } from "react";
+
+function ZoomableSVG({ children, width, height }) {
+  console.log("ZoomableSVG");
+  const svgRef = useRef();
+  const [k, setK] = useState(1);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  useEffect(() => {
+    const zoom = d3.zoom().on("zoom", (event) => {
+      const { x, y, k } = event.transform;
+      setK(k);
+      setX(x);
+      setY(y);
+    });
+    d3.select(svgRef.current).call(zoom);
+  }, []);
+  return (
+    <svg ref={svgRef} width={width} height={height}
+    className="graph has-background-white"
+    style={{marginLeft: "auto", marginRight: "auto" }}
+    viewBox={`0 0 ${width} ${height}`}>
+      <g transform={`translate(${x},${y})scale(${k})`}>{children}</g>
+    </svg>
+  );
+}
+
 
 function Main() {
     const MOBILE_BORDER_SIZE = 599;
@@ -14,7 +41,7 @@ function Main() {
   
     useEffect(() => {
       const startSimulation = (nodes, links) => {
-        const linkLen = 1;
+        
         const simulation = d3
           .forceSimulation()
           .force(
@@ -29,13 +56,20 @@ function Main() {
           .force(
             "link",
             d3
-              .forceLink(0.5)
-              .distance((d) => linkLen)
+              .forceLink()
+              .strength(0.05)
+              .distance((d) => {
+                //console.log(d);
+                return d['length'];
+              })
               .id((d) => d.id)
             
           ) //stength:linkの強さ（元に戻る力 distance: linkの長さ
           .force("charge", d3.forceManyBody().strength(-300)) //引き合う力を設定。
           .force("center", d3.forceCenter(svgWidth / 2, svgHeight / 2)) //描画するときの中心を設定
+          .force("r", forceRadial(function (d) {
+            return d.r;
+          }))
           .force(
             "x",
             d3
@@ -49,16 +83,16 @@ function Main() {
             .forceY()
             .y(svgHeight/2)
             .strength(0.5)
-          ); //x方向に戻る力
-        // .force(
-        //   "r",
-        //   d3
-        //     .forceRadial()
-        //     .radius(svgHeight * 0.35)
-        //     .x(svgWidth / 2)
-        //     .y(svgHeight / 2)
-        //     .strength(0.5)
-        // );
+          ) //x方向に戻る力
+         .force(
+           "r",
+           d3
+             .forceRadial()
+             .radius(svgHeight*0.05)
+             .x(svgWidth / 2)
+             .y(svgHeight / 2)
+             .strength(0.5)
+         );
         // .force(
         //   "y",
         //   d3
@@ -82,16 +116,15 @@ function Main() {
   
       const startLineChart = async () => {
         const [nodes, links] = await (async () => {
-            console.log("###");
         const response = await fetch("data/edge_word.json");
         const data = await response.json();
         const res = await fetch("data/label.json");
         const label = await res.json();
-        console.log(label)
+        //console.log(label)
         const leavesLength = label.length;
         const nodes = Array();
         const links = Array();
-        const r = 10;
+        const r = 8;
 
         for(let i = 1; i <= 1887; i++) {
             let col;
@@ -102,7 +135,7 @@ function Main() {
         }
 
             const title = i <= leavesLength?label[i-1]['word']:"";
-            console.log(title);
+            
             nodes.push({
             id:i,
             r,
@@ -114,7 +147,8 @@ function Main() {
         for(const item of data) {
             links.push({
             source:item.source,
-            target:item.target
+            target:item.target,
+            length:item.length
             });
         }
 
@@ -133,24 +167,18 @@ function Main() {
     if (loading) {
       return <div>loading...</div>;
     }
-  
+
+    
     return (
       <div className="container">
-        <svg
-          className="graph has-background-white"
-          style={{ display: "block", marginLeft: "auto", marginRight: "auto" }}
-          width={deviceWidth <= MOBILE_BORDER_SIZE ? "100%" : svgWidth}
-          height={svgHeight}
-          viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-        >
-        
+        <ZoomableSVG width={svgWidth} height={svgHeight}>
           <g className="links">
             {links.map((link) => {
               return (
                 <line
                   key={link.source.id + "-" + link.target.id}
                   stroke="black"
-                  strokeWidth="1"
+                  strokeWidth="0.5"
                   className="link"
   
                   id="edgepath0"
@@ -194,7 +222,7 @@ function Main() {
             </text>
             );
         })}
-        </svg>
+        </ZoomableSVG>
       </div>
     );
   }
