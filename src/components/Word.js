@@ -2,8 +2,19 @@ import * as d3 from "d3";
 import { forceRadial } from "d3";
 import { useEffect, useState,useRef } from "react";
 
+function dragged(event, d) {
+  d.x = event.x;
+  d.y = event.y;
+}
+
+function dragended(event, d) {
+  
+  d.x = null;
+  d.y = null;
+}
+ 
 function ZoomableSVG({ children, width, height }) {
-  console.log("ZoomableSVG");
+  //console.log("ZoomableSVG");
   const svgRef = useRef();
   const [k, setK] = useState(0.1);
   const [x, setX] = useState(width/4);
@@ -28,7 +39,7 @@ function ZoomableSVG({ children, width, height }) {
 }
 
 
-function Main() {
+function Word() {
   
     const [loading, setLoading] = useState(true);
     const [nodes, setNodes] = useState([]);
@@ -103,7 +114,9 @@ function Main() {
           // forceSimulationの影響下に  desを置く
           .nodes(nodes)
           // 時間経過で動かす
-          .on("tick", ticked);
+          .on("tick", ticked)
+
+          
         // linkデータをセット
         simulation.force("link").links(links);
   
@@ -164,7 +177,12 @@ function Main() {
     }, []);
   
 
-  
+    const node = d3.selectAll('g.nodes')
+    .call(d3.drag()
+              
+              .on("drag", (event, d) => (d.x = event.x, d.y = event.y))
+              .on("end", (event, d) => (d.x = null, d.y = null))
+         );
     if (loading) {
       return <div>loading...</div>;
     }
@@ -228,4 +246,4 @@ function Main() {
     );
   }
 
-export default Main;
+export default Word;
